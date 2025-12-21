@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F1F8E9">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🌍 Plant Encyclopedia"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#2E7D32"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search 400,000+ species worldwide"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="#558B2F"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:hint="Enter plant name..."
+            android:padding="12dp"
+            android:background="@android:color/white"
+            android:layout_marginEnd="8dp"
+            android:inputType="textCapWords"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Search"
+            android:textSize="16sp"
+            android:backgroundTint="#4CAF50" />
+    </LinearLayout>
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="← Back to Menu"
+        android:textSize="14sp"
+        android:backgroundTint="#CCCCCC"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Plant Image -->
+    <ImageView
+        android:id="@+id/plantImage"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Plant Photo" />
+
+    <!-- Results ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:text="Welcome to the Global Plant Encyclopedia!\n\n🔍 Search any plant:\n• Common names (Rose, Tomato)\n• Scientific names (Rosa damascena)\n• Trees, flowers, vegetables\n• Houseplants, succulents\n• 400,000+ species available\n\nTry searching: Monstera, Lavender, Bamboo, Oak" />
+    </ScrollView>
+
+</LinearLayout>

@@ -19,6 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Button plantInfoBtn = findViewById(R.id.plantInfoBtn);
         Button notepadBtn = findViewById(R.id.notepadBtn);
+        Button encyclopediaBtn = findViewById(R.id.encyclopediaBtn);
 
         plantInfoBtn.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, PlantInfoActivity.class);
@@ -27,6 +28,11 @@ public class HomeActivity extends AppCompatActivity {
 
         notepadBtn.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, NotepadActivity.class);
+            startActivity(intent);
+        });
+
+        encyclopediaBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, EncyclopediaActivity.class);
             startActivity(intent);
         });
 
