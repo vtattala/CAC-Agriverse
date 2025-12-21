@@ -81,7 +81,7 @@ public class InsectModel {
         Gson gson = new Gson();
         JsonObject jsonObject = gson.fromJson(jsonString.toString(), JsonObject.class);
 
-        // Get class names
+
         String[] classesArray = gson.fromJson(
                 jsonObject.getAsJsonArray("classes"),
                 String[].class
@@ -91,7 +91,7 @@ public class InsectModel {
             insectLabels.add(className);
         }
 
-        // Get facts
+
         insectFacts = jsonObject.getAsJsonObject("facts");
 
         Log.i(TAG, "Loaded " + insectLabels.size() + " insect types");
@@ -106,7 +106,7 @@ public class InsectModel {
         try {
             Log.i(TAG, "Processing insect image...");
 
-            // Process image
+
             TensorImage image = new TensorImage();
             image.load(bitmap);
 
@@ -117,11 +117,10 @@ public class InsectModel {
 
             TensorImage processedImage = imageProcessor.process(image);
 
-            // Run inference
             float[][] output = new float[1][insectLabels.size()];
             tflite.run(processedImage.getBuffer(), output);
 
-            // Find best prediction
+
             float maxConfidence = 0;
             int maxIndex = 0;
             for (int i = 0; i < output[0].length; i++) {
@@ -133,7 +132,6 @@ public class InsectModel {
 
             String insectName = insectLabels.get(maxIndex);
 
-            // Get facts
             String fact1 = "No information available";
             String fact2 = "No information available";
 
