@@ -20,6 +20,12 @@ public class HomeActivity extends AppCompatActivity {
         Button plantInfoBtn = findViewById(R.id.plantInfoBtn);
         Button notepadBtn = findViewById(R.id.notepadBtn);
         Button encyclopediaBtn = findViewById(R.id.encyclopediaBtn);
+        Button regionalGuideBtn = findViewById(R.id.regionalGuideBtn);
+
+        regionalGuideBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, RegionalGuideActivity.class);
+            startActivity(intent);
+        });
 
         plantInfoBtn.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, PlantInfoActivity.class);

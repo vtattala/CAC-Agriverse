@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#E8F5E9">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🗺️ Regional Agriculture Guide"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#2E7D32"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Discover ideal crops for any location"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="#558B2F"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/locationInput"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:hint="Enter city or region..."
+            android:padding="12dp"
+            android:background="@android:color/white"
+            android:layout_marginEnd="8dp"
+            android:inputType="textCapWords"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:text="Search"
+            android:textSize="16sp"
+            android:backgroundTint="#558B2F" />
+    </LinearLayout>
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="← Back to Menu"
+        android:textSize="14sp"
+        android:backgroundTint="#CCCCCC"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Map Placeholder -->
+    <ImageView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:background="#FFFFFF"
+        android:src="@android:drawable/ic_dialog_map"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="World Map" />
+
+    <!-- Results ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:text="🌍 Welcome to Regional Agriculture Guide!\n\nSearch any city or region worldwide to discover:\n\n✅ Climate zone classification\n✅ Ideal vegetables for the region\n✅ Best grains to grow\n✅ Recommended fruits\n✅ Watering frequency guide\n✅ Current weather conditions\n✅ Growing season info\n\nTry: San Diego, Tokyo, Paris, Nairobi, Sydney" />
+    </ScrollView>
+
+</LinearLayout>
