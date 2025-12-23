@@ -24,7 +24,7 @@ import java.util.Locale;
 public class RegionalGuideActivity extends AppCompatActivity {
 
     private static final String TAG = "RegionalGuide";
-    private static final String WEATHER_API_KEY = "1cb1a88483037ec05c04e9eee9bd5521";
+    private static final String WEATHER_API_KEY = "placeholder";
 
     private EditText locationInput;
     private Button searchBtn, backBtn;
