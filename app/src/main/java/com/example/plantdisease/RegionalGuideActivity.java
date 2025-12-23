@@ -24,7 +24,7 @@ import java.util.Locale;
 public class RegionalGuideActivity extends AppCompatActivity {
 
     private static final String TAG = "RegionalGuide";
-    private static final String WEATHER_API_KEY = "1cb1a88483037ec05c04e9eee9bd5521"; // Free from openweathermap.org
+    private static final String WEATHER_API_KEY = "1cb1a88483037ec05c04e9eee9bd5521";
 
     private EditText locationInput;
     private Button searchBtn, backBtn;
@@ -63,13 +63,13 @@ public class RegionalGuideActivity extends AppCompatActivity {
 
         new Thread(() -> {
             try {
-                // Get weather and location data
                 RegionalData data = fetchRegionalData(location);
 
                 runOnUiThread(() -> {
                     progressBar.setVisibility(ProgressBar.GONE);
                     if (data != null) {
                         displayRegionalInfo(data);
+                        loadMapImage(data.latitude, data.longitude);
                     } else {
                         resultText.setText("❌ Location not found\n\nTry:\n• Major cities (New York, Tokyo)\n• Regions (California, Tuscany)\n• Check spelling");
                     }
@@ -87,7 +87,6 @@ public class RegionalGuideActivity extends AppCompatActivity {
 
     private RegionalData fetchRegionalData(String location) {
         try {
-            // Get coordinates and weather from OpenWeatherMap
             String encodedLocation = location.replace(" ", "%20");
             String weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" +
                     encodedLocation + "&appid=" + WEATHER_API_KEY + "&units=metric";
@@ -101,12 +100,10 @@ public class RegionalGuideActivity extends AppCompatActivity {
             data.location = json.get("name").getAsString();
             data.country = json.getAsJsonObject("sys").get("country").getAsString();
 
-            // Coordinates
             JsonObject coord = json.getAsJsonObject("coord");
             data.latitude = coord.get("lat").getAsDouble();
             data.longitude = coord.get("lon").getAsDouble();
 
-            // Current weather
             JsonObject main = json.getAsJsonObject("main");
             data.temperature = main.get("temp").getAsDouble();
             data.humidity = main.get("humidity").getAsInt();
@@ -114,7 +111,6 @@ public class RegionalGuideActivity extends AppCompatActivity {
             JsonArray weatherArray = json.getAsJsonArray("weather");
             data.weatherDescription = weatherArray.get(0).getAsJsonObject().get("description").getAsString();
 
-            // Determine climate zone and ideal plants
             determineClimateAndPlants(data);
 
             Log.i(TAG, "Found: " + data.location);
@@ -127,7 +123,6 @@ public class RegionalGuideActivity extends AppCompatActivity {
     }
 
     private void determineClimateAndPlants(RegionalData data) {
-        // Determine climate zone based on latitude
         double lat = Math.abs(data.latitude);
 
         if (lat < 23.5) {
@@ -160,7 +155,6 @@ public class RegionalGuideActivity extends AppCompatActivity {
             data.growingSeason = "May-August (3-4 months)";
         }
 
-        // Adjust for current season and temperature
         if (data.temperature < 10) {
             data.currentAdvice = "⚠️ Currently too cold for most planting. Prepare soil and plan for spring.";
         } else if (data.temperature > 30) {
@@ -239,6 +233,67 @@ public class RegionalGuideActivity extends AppCompatActivity {
     private String capitalize(String str) {
         if (str == null || str.isEmpty()) return str;
         return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
+    private void loadMapImage(double latitude, double longitude) {
+        new Thread(() -> {
+            try {
+                // Using OpenStreetMap tile server directly
+                int zoom = 12;
+                double x = Math.floor((longitude + 180) / 360 * (1 << zoom));
+                double y = Math.floor((1 - Math.log(Math.tan(Math.toRadians(latitude)) +
+                        1 / Math.cos(Math.toRadians(latitude))) / Math.PI) / 2 * (1 << zoom));
+
+                String mapUrl = String.format(Locale.US,
+                        "https://tile.openstreetmap.org/%d/%d/%d.png",
+                        zoom, (int)x, (int)y
+                );
+
+                Log.i(TAG, "Loading map from: " + mapUrl);
+
+                URL url = new URL(mapUrl);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("User-Agent", "AgriVerse/1.0");
+                conn.setConnectTimeout(15000);
+                conn.setReadTimeout(15000);
+
+                int responseCode = conn.getResponseCode();
+                Log.i(TAG, "Response code: " + responseCode);
+
+                if (responseCode == 200) {
+                    android.graphics.Bitmap bitmap = android.graphics.BitmapFactory.decodeStream(
+                            conn.getInputStream()
+                    );
+
+                    runOnUiThread(() -> {
+                        if (bitmap != null) {
+                            mapView.setImageBitmap(bitmap);
+                            mapView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                            Log.i(TAG, "✓ Map loaded successfully!");
+                            Toast.makeText(this, "Map loaded", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Log.e(TAG, "Bitmap is null");
+                            Toast.makeText(this, "Map image failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } else {
+                    Log.e(TAG, "HTTP error: " + responseCode);
+                }
+
+                conn.disconnect();
+
+            } catch (Exception e) {
+                Log.e(TAG, "Map load error: " + e.getClass().getSimpleName());
+                Log.e(TAG, "Error message: " + e.getMessage());
+                e.printStackTrace();
+
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Map unavailable: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                });
+            }
+        }).start();
     }
 
     private static class RegionalData {
