@@ -42,4 +42,7 @@ dependencies {
 
     // JSON parsing
     implementation 'com.google.code.gson:gson:2.10.1'
+
+    // ✅ OkHttp for network requests
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
 }

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- REQUIRED for OpenAI / any API -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -55,6 +58,12 @@
         <activity
             android:name=".NotepadActivity"
             android:exported="false" />
+
+        <!-- CHATBOT SCREEN -->
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
