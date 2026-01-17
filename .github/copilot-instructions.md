@@ -33,16 +33,25 @@ app/src/main/
 │   ├── NotepadActivity.java           # Digital notepad
 │   ├── HomeActivity.java              # Main navigation hub
 │   ├── WelcomeActivity.java           # User onboarding
+│   ├── MainContainerActivity.java     # Main container with navigation
+│   ├── HomeFragment.java              # Home screen fragment
+│   ├── ChatActivity.java              # AI chat interface
+│   ├── EncyclopediaActivity.java      # Plant encyclopedia
+│   ├── RegionalGuideActivity.java     # Regional farming guides
+│   ├── SatelliteActivity.java         # Satellite imagery
+│   ├── SpaceWeatherActivity.java      # Space weather data
+│   ├── SpaceWeatherFragment.java      # Space weather fragment
+│   ├── PhoneAuthActivity.java         # Phone authentication
 │   ├── DiseaseModel.java              # TensorFlow Lite disease model wrapper
-│   ├── InsectModel.java               # TensorFlow Lite insect model wrapper
-│   └── [Other activities...]          # Additional features
+│   └── InsectModel.java               # TensorFlow Lite insect model wrapper
 ├── assets/                            # AI models and data files
-│   ├── plant_disease_model.tflite    # Disease detection model (~10MB)
-│   ├── insect_model.tflite           # Insect identification model (~10MB)
+│   ├── plant_disease_model.tflite    # Disease detection model (~9.8MB)
+│   ├── insect_model.tflite           # Insect identification model (~9.8MB)
 │   ├── disease_labels.json           # Disease class labels
 │   ├── insect_labels.json            # Insect class labels
 │   ├── plant_info.json               # Plant growing information
-│   └── [Location data files]         # Cities, countries JSON
+│   ├── cities.json                   # Cities data
+│   └── countries.json                # Countries data
 └── res/                              # Android resources (layouts, drawables, strings)
 ```
 
@@ -159,7 +168,7 @@ app/src/main/
 
 ### When Modifying ML Models
 1. Convert models to TensorFlow Lite format with proper optimization settings
-2. Keep models under 15MB for reasonable APK size
+2. Keep individual models under 10MB for reasonable APK size (current models are ~9.8MB each)
 3. Update corresponding label JSON files in assets
 4. Test thoroughly on multiple devices before committing
 5. Document model architecture, training data, and expected accuracy
