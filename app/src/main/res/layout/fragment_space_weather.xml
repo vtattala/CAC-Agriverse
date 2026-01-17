@@ -165,7 +165,20 @@
                         android:text="Checking conditions..."
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="#5B9A5F" />
+                        android:textColor="#5B9A5F"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- NEW: Crop Impact -->
+                    <TextView
+                        android:id="@+id/cropImpact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Analyzing crop impact..."
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#7B83A6"
+                        android:layout_marginTop="4dp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -210,6 +223,17 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="#5B9A5F"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- NEW: Satellite Impact -->
+                    <TextView
+                        android:id="@+id/satelliteImpact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Analyzing satellite impact..."
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#7B83A6"
                         android:layout_marginBottom="16dp" />
 
                     <TextView

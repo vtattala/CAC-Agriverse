@@ -51,10 +51,10 @@ public class PhoneAuthActivity extends AppCompatActivity {
 
             // Navigate to HomeActivity after verification
             continueBtn.postDelayed(() -> {
-                Intent intent = new Intent(PhoneAuthActivity.this, HomeActivity.class);
-                intent.putExtra("USER_PHONE", phoneNumber);
+                Intent intent = new Intent(PhoneAuthActivity.this, MainContainerActivity.class);
                 startActivity(intent);
                 finish();
+
             }, 1000);
         });
     }

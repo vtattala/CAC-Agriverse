@@ -27,6 +27,7 @@ public class SpaceWeatherFragment extends Fragment {
 
     private TextView kpIndexValue, kpStatus, solarWindValue, solarWindStatus;
     private TextView f107Value, f107Status, geomagneticStatus, radiationStatus;
+    private TextView cropImpact, satelliteImpact;
 
     private final OkHttpClient httpClient = new OkHttpClient();
 
@@ -45,11 +46,17 @@ public class SpaceWeatherFragment extends Fragment {
         geomagneticStatus = view.findViewById(R.id.geomagneticStatus);
         radiationStatus = view.findViewById(R.id.radiationStatus);
 
+        // NEW AGRICULTURE IMPACT TEXTVIEWS
+        cropImpact = view.findViewById(R.id.cropImpact);
+        satelliteImpact = view.findViewById(R.id.satelliteImpact);
+
         // Refresh button
         view.findViewById(R.id.refreshBtn).setOnClickListener(v -> {
             kpIndexValue.setText("Loading...");
             solarWindValue.setText("Loading...");
             f107Value.setText("Loading...");
+            cropImpact.setText("Analyzing crop impact...");
+            satelliteImpact.setText("Analyzing satellite impact...");
             fetchSpaceWeather();
         });
 
@@ -70,14 +77,14 @@ public class SpaceWeatherFragment extends Fragment {
                     getActivity().runOnUiThread(() -> {
                         kpIndexValue.setText("Error");
                         kpStatus.setText("Unable to fetch data");
+                        cropImpact.setText("Unable to determine crop impact");
                     });
                 }
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                String json = response.body().string();
-                parseSpaceWeather(json);
+                parseSpaceWeather(response.body().string());
             }
         });
 
@@ -92,12 +99,14 @@ public class SpaceWeatherFragment extends Fragment {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Log.e("SOLAR_WIND", "Failed", e);
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(() -> satelliteImpact.setText("Unable to determine satellite impact"));
+                }
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                String json = response.body().string();
-                parseSolarWind(json);
+                parseSolarWind(response.body().string());
             }
         });
     }
@@ -113,38 +122,45 @@ public class SpaceWeatherFragment extends Fragment {
                 getActivity().runOnUiThread(() -> {
                     kpIndexValue.setText(String.format("%.1f", kpIndex));
 
+                    // -----------------------------
+                    // GEOMAGNETIC STATUS + COLORS
+                    // -----------------------------
                     if (kpIndex < 4) {
                         kpStatus.setText("Quiet");
                         kpStatus.setTextColor(Color.parseColor("#2E7D32"));
-                        geomagneticStatus.setText("✅ Normal Conditions");
+                        geomagneticStatus.setText("Normal geomagnetic conditions");
                         geomagneticStatus.setTextColor(Color.parseColor("#2E7D32"));
-                    } else if (kpIndex < 5) {
+
+                        cropImpact.setText("Crop Impact: Satellite vegetation data is reliable today.");
+                        cropImpact.setTextColor(Color.parseColor("#2E7D32"));
+
+                    } else if (kpIndex < 6) {
                         kpStatus.setText("Unsettled");
                         kpStatus.setTextColor(Color.parseColor("#F9A825"));
-                        geomagneticStatus.setText("⚠️ Minor Storm");
+                        geomagneticStatus.setText("Minor geomagnetic disturbance");
                         geomagneticStatus.setTextColor(Color.parseColor("#F9A825"));
-                    } else if (kpIndex < 6) {
-                        kpStatus.setText("Active");
-                        kpStatus.setTextColor(Color.parseColor("#FF6F00"));
-                        geomagneticStatus.setText("⚠️ Moderate Storm");
-                        geomagneticStatus.setTextColor(Color.parseColor("#FF6F00"));
-                    } else if (kpIndex < 7) {
-                        kpStatus.setText("Minor Storm");
-                        kpStatus.setTextColor(Color.parseColor("#D84315"));
-                        geomagneticStatus.setText("🔴 Strong Storm");
-                        geomagneticStatus.setTextColor(Color.parseColor("#D84315"));
+
+                        cropImpact.setText("Crop Impact: NDVI and soil moisture readings may show slight noise.");
+                        cropImpact.setTextColor(Color.parseColor("#F9A825"));
+
                     } else {
-                        kpStatus.setText("Major Storm");
+                        kpStatus.setText("Storm");
                         kpStatus.setTextColor(Color.parseColor("#C62828"));
-                        geomagneticStatus.setText("🚨 Severe Storm");
+                        geomagneticStatus.setText("Strong geomagnetic storm");
                         geomagneticStatus.setTextColor(Color.parseColor("#C62828"));
+
+                        cropImpact.setText("Crop Impact: Strong storm — vegetation indices may be inaccurate.");
+                        cropImpact.setTextColor(Color.parseColor("#C62828"));
                     }
 
+                    // -----------------------------
+                    // RADIATION IMPACT
+                    // -----------------------------
                     if (kpIndex < 5) {
                         radiationStatus.setText("Normal radiation levels");
                         radiationStatus.setTextColor(Color.parseColor("#2E7D32"));
                     } else {
-                        radiationStatus.setText("Elevated radiation - Monitor crops");
+                        radiationStatus.setText("Elevated radiation — monitor crop stress");
                         radiationStatus.setTextColor(Color.parseColor("#D84315"));
                     }
                 });
@@ -160,27 +176,42 @@ public class SpaceWeatherFragment extends Fragment {
 
             if (array.length() > 0 && getActivity() != null) {
                 JSONObject latest = array.getJSONObject(array.length() - 1);
+
                 double bt = latest.getDouble("bt");
                 double estimatedSpeed = 300 + (bt * 50);
+                double f107 = 70 + (bt * 10);
 
                 getActivity().runOnUiThread(() -> {
                     solarWindValue.setText(String.format("%.0f km/s", estimatedSpeed));
 
+                    // -----------------------------
+                    // SOLAR WIND STATUS
+                    // -----------------------------
                     if (estimatedSpeed < 400) {
                         solarWindStatus.setText("Slow");
                         solarWindStatus.setTextColor(Color.parseColor("#2E7D32"));
-                    } else if (estimatedSpeed < 500) {
-                        solarWindStatus.setText("Normal");
-                        solarWindStatus.setTextColor(Color.parseColor("#2E7D32"));
+
+                        satelliteImpact.setText("Satellite Impact: Stable conditions for crop monitoring.");
+                        satelliteImpact.setTextColor(Color.parseColor("#2E7D32"));
+
                     } else if (estimatedSpeed < 600) {
                         solarWindStatus.setText("Elevated");
                         solarWindStatus.setTextColor(Color.parseColor("#F9A825"));
+
+                        satelliteImpact.setText("Satellite Impact: Minor interference possible in NDVI data.");
+                        satelliteImpact.setTextColor(Color.parseColor("#F9A825"));
+
                     } else {
-                        solarWindStatus.setText("High Speed Stream");
+                        solarWindStatus.setText("High-Speed Stream");
                         solarWindStatus.setTextColor(Color.parseColor("#D84315"));
+
+                        satelliteImpact.setText("Satellite Impact: Expect reduced accuracy in vegetation data.");
+                        satelliteImpact.setTextColor(Color.parseColor("#D84315"));
                     }
 
-                    double f107 = 70 + (bt * 10);
+                    // -----------------------------
+                    // F10.7 SOLAR FLUX
+                    // -----------------------------
                     f107Value.setText(String.format("%.0f sfu", f107));
 
                     if (f107 < 100) {
@@ -195,6 +226,7 @@ public class SpaceWeatherFragment extends Fragment {
                     }
                 });
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
