@@ -117,7 +117,7 @@
                                 android:text="Fetching data..."
                                 android:textSize="16sp"
                                 android:textStyle="bold"
-                                android:textColor="#4CAF50" />
+                                android:textColor="#5B9A5F" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -165,7 +165,7 @@
                         android:text="Checking conditions..."
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="#4CAF50" />
+                        android:textColor="#5B9A5F" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -209,7 +209,7 @@
                         android:text="Fetching data..."
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="#4CAF50"
+                        android:textColor="#5B9A5F"
                         android:layout_marginBottom="16dp" />
 
                     <TextView
@@ -262,7 +262,7 @@
                         android:text="Fetching data..."
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="#4CAF50"
+                        android:textColor="#5B9A5F"
                         android:layout_marginBottom="16dp" />
 
                     <TextView
@@ -305,7 +305,7 @@
                         android:text="Analyzing conditions..."
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="#4CAF50"
+                        android:textColor="#5B9A5F"
                         android:layout_marginBottom="12dp" />
 
                     <TextView
