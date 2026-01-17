@@ -17,6 +17,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.Priority;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -139,8 +140,8 @@ public class SatelliteActivity extends AppCompatActivity {
             return;
         }
 
-        // Get last known location
-        fusedLocationClient.getLastLocation().addOnSuccessListener(location -> {
+        // Get current location
+        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, null).addOnSuccessListener(location -> {
             if (location != null) {
                 double lat = location.getLatitude();
                 double lon = location.getLongitude();
@@ -156,6 +157,9 @@ public class SatelliteActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Unable to get location. Try entering manually.", Toast.LENGTH_SHORT).show();
             }
+        }).addOnFailureListener(e -> {
+            Log.e("SATELLITE_ACTIVITY", "Failed to get location", e);
+            Toast.makeText(this, "Failed to get location. Please ensure location is enabled on your device.", Toast.LENGTH_LONG).show();
         });
     }
 
