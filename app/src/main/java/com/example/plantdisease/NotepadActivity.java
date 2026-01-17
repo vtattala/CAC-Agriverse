@@ -13,7 +13,7 @@ public class NotepadActivity extends AppCompatActivity {
     private EditText notepad;
     private Button saveBtn, clearBtn, backBtn;
     private SharedPreferences prefs;
-    private static final String PREFS_NAME = "AgriVerseNotes";
+    private static final String PREFS_NAME = "AcreIntelligenceNotes";
     private static final String NOTE_KEY = "saved_notes";
 
     @Override

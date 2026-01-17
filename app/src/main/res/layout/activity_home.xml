@@ -16,14 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#4CAF50"
+            android:background="#1A2B4A"
             android:padding="32dp"
             android:elevation="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🌾 AgriVerse"
+                android:text="🌾 Acre Intelligence"
                 android:textSize="32sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"

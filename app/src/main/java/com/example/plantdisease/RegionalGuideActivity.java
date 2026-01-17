@@ -254,7 +254,7 @@ public class RegionalGuideActivity extends AppCompatActivity {
                 URL url = new URL(mapUrl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
-                conn.setRequestProperty("User-Agent", "AgriVerse/1.0");
+                conn.setRequestProperty("User-Agent", "AcreIntelligence/1.0");
                 conn.setConnectTimeout(15000);
                 conn.setReadTimeout(15000);
 
