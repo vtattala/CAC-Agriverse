@@ -14,7 +14,7 @@
         android:textSize="28sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="#558B2F"
+        android:textColor="#4A8A4E"
         android:layout_marginBottom="16dp" />
 
     <!-- Search Bar -->
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:text="Search"
-            android:backgroundTint="#558B2F" />
+            android:backgroundTint="#4A8A4E" />
     </LinearLayout>
 
     <!-- Back Button -->
