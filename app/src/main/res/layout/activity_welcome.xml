@@ -1,79 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    android:background="#F1F8E9">
+    android:fillViewport="true"
+    android:background="#67A668">
 
-    <!-- Logo Placeholder (Add your logo to drawable folder) -->
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/copilot"
-        android:layout_marginBottom="24dp"
-        android:contentDescription="AgriVerse Logo" />
-
-    <!-- App Title -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AgriVerse"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:textColor="#1B5E20"
-        android:layout_marginBottom="8dp" />
-
-    <!-- Subtitle -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="In every pixel, a prophecy. In every scan, a shield."
-        android:textSize="16sp"
-        android:textColor="#4CAF50"
-        android:layout_marginBottom="48dp" />
-
-    <!-- Name Input -->
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your name"
-        android:layout_marginBottom="16dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nameInput"
-            android:layout_width="match_parent"
+        <!-- Logo Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:textSize="16sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp">
 
-    <!-- Region Input -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your region"
-        android:layout_marginBottom="32dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#4D9B54"
+                android:padding="20dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/regionInput"
-            android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="151dp"
+                    android:layout_height="150dp"
+                    android:contentDescription="AgriVerse Logo"
+                    android:src="@drawable/newlogo" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- App Title (outside card) -->
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textSize="16sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="AgriVerse"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp" />
 
-    <!-- Continue Button -->
-    <Button
-        android:id="@+id/continueBtn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Continue to AgriVerse"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:backgroundTint="#4CAF50" />
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In every pixel a prophecy, in every scan a shield"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="60dp"
+            android:paddingHorizontal="40dp" />
 
-</LinearLayout>
+        <!-- Sign In with Google Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signInGoogleBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Sign in with Google"
+            android:textSize="19sp"
+            android:textAllCaps="false"
+            android:textColor="#E002620C"
+            android:textStyle="bold"
+            android:background="@drawable/light_button_background"
+            android:backgroundTint="@null"
+            android:layout_marginBottom="16dp"
+            android:drawableLeft="@drawable/ic_google_green"
+            android:drawablePadding="-13dp"
+            android:paddingLeft="32dp"
+            android:gravity="center" />
+
+        <!-- Continue with Number Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/continueWithNumberBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Continue with Phone Number"
+            android:textSize="19sp"
+            android:textAllCaps="false"
+            android:textColor="#E002620C"
+            android:textStyle="bold"
+            android:background="@drawable/light_button_background"
+            android:backgroundTint="@null" />
+
+        <!-- Footer note -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌱 Start your farming journey"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="40dp" />
+
+    </LinearLayout>
+
+</ScrollView>

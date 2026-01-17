@@ -2,40 +2,43 @@ package com.example.plantdisease;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeFragment extends Fragment {
 
     private TextView welcomeText;
-    private View plantDiseaseBtn, insectDetectionBtn;
-
     private String userName, userEmail, userCountry;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflate the home layout
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // Get user info from WelcomeActivity
-        Intent intent = getIntent();
-        userName = intent.getStringExtra("USER_NAME");
-        userEmail = intent.getStringExtra("USER_EMAIL");
-        userCountry = intent.getStringExtra("USER_COUNTRY");
+        // Get user data from bundle
+        if (getArguments() != null) {
+            userName = getArguments().getString("USER_NAME");
+            userEmail = getArguments().getString("USER_EMAIL");
+            userCountry = getArguments().getString("USER_COUNTRY");
+        }
 
         // Find all views
-        welcomeText = findViewById(R.id.welcomeText);
-        plantDiseaseBtn = findViewById(R.id.plantDiseaseBtn);
-        insectDetectionBtn = findViewById(R.id.insectDetectionBtn);
-        View plantInfoBtn = findViewById(R.id.plantInfoBtn);
-        View notepadBtn = findViewById(R.id.notepadBtn);
-        View encyclopediaBtn = findViewById(R.id.encyclopediaBtn);
-        View regionalGuideBtn = findViewById(R.id.regionalGuideBtn);
-        View chatbotBtn = findViewById(R.id.chatbotBtn);
-        View satelliteBtn = findViewById(R.id.satelliteBtn);
-        View spaceWeatherBtn = findViewById(R.id.spaceWeatherBtn); // NEW
+        welcomeText = view.findViewById(R.id.welcomeText);
+        View plantDiseaseBtn = view.findViewById(R.id.plantDiseaseBtn);
+        View insectDetectionBtn = view.findViewById(R.id.insectDetectionBtn);
+        View plantInfoBtn = view.findViewById(R.id.plantInfoBtn);
+        View notepadBtn = view.findViewById(R.id.notepadBtn);
+        View encyclopediaBtn = view.findViewById(R.id.encyclopediaBtn);
+        View regionalGuideBtn = view.findViewById(R.id.regionalGuideBtn);
+        View chatbotBtn = view.findViewById(R.id.chatbotBtn);
+        View satelliteBtn = view.findViewById(R.id.satelliteBtn);
 
         // Display welcome message
         welcomeText.setText(
@@ -46,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Plant Disease button
         plantDiseaseBtn.setOnClickListener(v -> {
-            Intent plantIntent = new Intent(HomeActivity.this, MainActivity.class);
+            Intent plantIntent = new Intent(getActivity(), MainActivity.class);
             plantIntent.putExtra("USER_NAME", userName);
             plantIntent.putExtra("USER_EMAIL", userEmail);
             plantIntent.putExtra("USER_COUNTRY", userCountry);
@@ -55,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Insect Detection button
         insectDetectionBtn.setOnClickListener(v -> {
-            Intent insectIntent = new Intent(HomeActivity.this, InsectActivity.class);
+            Intent insectIntent = new Intent(getActivity(), InsectActivity.class);
             insectIntent.putExtra("USER_NAME", userName);
             insectIntent.putExtra("USER_EMAIL", userEmail);
             insectIntent.putExtra("USER_COUNTRY", userCountry);
@@ -64,47 +67,43 @@ public class HomeActivity extends AppCompatActivity {
 
         // Encyclopedia button
         encyclopediaBtn.setOnClickListener(v -> {
-            Intent encyclopediaIntent = new Intent(HomeActivity.this, EncyclopediaActivity.class);
+            Intent encyclopediaIntent = new Intent(getActivity(), EncyclopediaActivity.class);
             startActivity(encyclopediaIntent);
         });
 
         // Regional Guide button
         regionalGuideBtn.setOnClickListener(v -> {
-            Intent regionalIntent = new Intent(HomeActivity.this, RegionalGuideActivity.class);
+            Intent regionalIntent = new Intent(getActivity(), RegionalGuideActivity.class);
             regionalIntent.putExtra("USER_COUNTRY", userCountry);
             startActivity(regionalIntent);
         });
 
         // Plant Info button
         plantInfoBtn.setOnClickListener(v -> {
-            Intent plantInfoIntent = new Intent(HomeActivity.this, PlantInfoActivity.class);
+            Intent plantInfoIntent = new Intent(getActivity(), PlantInfoActivity.class);
             startActivity(plantInfoIntent);
         });
 
         // Notepad button
         notepadBtn.setOnClickListener(v -> {
-            Intent notepadIntent = new Intent(HomeActivity.this, NotepadActivity.class);
+            Intent notepadIntent = new Intent(getActivity(), NotepadActivity.class);
             startActivity(notepadIntent);
         });
 
         // Chatbot button
         chatbotBtn.setOnClickListener(v -> {
-            Intent chatIntent = new Intent(HomeActivity.this, ChatActivity.class);
+            Intent chatIntent = new Intent(getActivity(), ChatActivity.class);
             chatIntent.putExtra("USER_NAME", userName);
             startActivity(chatIntent);
         });
 
         // Agricultural Data (Satellite) button
         satelliteBtn.setOnClickListener(v -> {
-            Intent satIntent = new Intent(HomeActivity.this, SatelliteActivity.class);
+            Intent satIntent = new Intent(getActivity(), SatelliteActivity.class);
             satIntent.putExtra("USER_COUNTRY", userCountry);
             startActivity(satIntent);
         });
 
-        // Space Weather button - NEW
-        spaceWeatherBtn.setOnClickListener(v -> {
-            Intent spaceIntent = new Intent(HomeActivity.this, SpaceWeatherActivity.class);
-            startActivity(spaceIntent);
-        });
+        return view;
     }
 }

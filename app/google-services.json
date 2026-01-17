@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "730674807242",
+    "project_id": "agriverse-2a423",
+    "storage_bucket": "agriverse-2a423.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730674807242:android:8aa5940990d9c835ae8f33",
+        "android_client_info": {
+          "package_name": "com.example.plantdisease"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730674807242-7s341fkdot9t2j8cvijmct3n46v9rulf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.plantdisease",
+            "certificate_hash": "b3f4aa47a088108d047c1d41772245e2e81de0d2"
+          }
+        },
+        {
+          "client_id": "730674807242-01t77ceh4vejgabrj41jigpucdb4sus0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyU9_20hXChCM68vWKOrG9cW9cQVRAKV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730674807242-01t77ceh4vejgabrj41jigpucdb4sus0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

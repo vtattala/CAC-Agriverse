@@ -1,5 +1,4 @@
 package com.example.plantdisease;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -24,7 +23,7 @@ import java.util.Locale;
 public class RegionalGuideActivity extends AppCompatActivity {
 
     private static final String TAG = "RegionalGuide";
-    private static final String WEATHER_API_KEY = "1cb1a88483037ec05c04e9eee9bd5521";
+    private static final String WEATHER_API_KEY = "5b65331fe8339a7b0d88ba20b9da4eab";
 
     private EditText locationInput;
     private Button searchBtn, backBtn;
@@ -238,18 +237,21 @@ public class RegionalGuideActivity extends AppCompatActivity {
     private void loadMapImage(double latitude, double longitude) {
         new Thread(() -> {
             try {
-                // Using OpenStreetMap tile server directly
+                // Using Esri World Imagery (satellite view) - FREE
                 int zoom = 12;
-                double x = Math.floor((longitude + 180) / 360 * (1 << zoom));
-                double y = Math.floor((1 - Math.log(Math.tan(Math.toRadians(latitude)) +
-                        1 / Math.cos(Math.toRadians(latitude))) / Math.PI) / 2 * (1 << zoom));
+
+                // Convert lat/lon to tile coordinates
+                double n = Math.pow(2, zoom);
+                double xtile = ((longitude + 180.0) / 360.0) * n;
+                double ytile = (1.0 - (Math.log(Math.tan(Math.toRadians(latitude)) +
+                        (1 / Math.cos(Math.toRadians(latitude)))) / Math.PI)) / 2.0 * n;
 
                 String mapUrl = String.format(Locale.US,
-                        "https://tile.openstreetmap.org/%d/%d/%d.png",
-                        zoom, (int)x, (int)y
+                        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/%d/%d/%d",
+                        zoom, (int)ytile, (int)xtile
                 );
 
-                Log.i(TAG, "Loading map from: " + mapUrl);
+                Log.i(TAG, "Loading satellite map from: " + mapUrl);
 
                 URL url = new URL(mapUrl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -270,11 +272,9 @@ public class RegionalGuideActivity extends AppCompatActivity {
                         if (bitmap != null) {
                             mapView.setImageBitmap(bitmap);
                             mapView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                            Log.i(TAG, "✓ Map loaded successfully!");
-                            Toast.makeText(this, "Map loaded", Toast.LENGTH_SHORT).show();
+                            Log.i(TAG, "✓ Satellite map loaded successfully!");
                         } else {
                             Log.e(TAG, "Bitmap is null");
-                            Toast.makeText(this, "Map image failed", Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
@@ -287,11 +287,6 @@ public class RegionalGuideActivity extends AppCompatActivity {
                 Log.e(TAG, "Map load error: " + e.getClass().getSimpleName());
                 Log.e(TAG, "Error message: " + e.getMessage());
                 e.printStackTrace();
-
-                runOnUiThread(() -> {
-                    Toast.makeText(this, "Map unavailable: " + e.getMessage(),
-                            Toast.LENGTH_LONG).show();
-                });
             }
         }).start();
     }

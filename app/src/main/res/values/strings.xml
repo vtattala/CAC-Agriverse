@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PlantDiseaseIdentifier</string>
+    <string name="default_web_client_id">730674807242-01t77ceh4vejgabrj41jigpucdb4sus0.apps.googleusercontent.com</string>
 </resources>
