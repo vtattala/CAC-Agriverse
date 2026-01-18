@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="Plant Disease Identifier"
         android:textColor="#FDFDFD"
@@ -25,6 +26,7 @@
         android:layout_marginBottom="16dp"
         android:background="#E8F5E9"
         android:contentDescription="Plant Image"
+        android:elevation="8dp"
         android:scaleType="centerInside" />
 
     <!-- Buttons -->
@@ -41,6 +43,8 @@
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:backgroundTint="#5B9A5F"
+            android:elevation="8dp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="📷 Camera"
             android:textSize="16sp" />
 
@@ -51,6 +55,8 @@
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:backgroundTint="#5B9A5F"
+            android:elevation="8dp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="🖼️ Gallery"
             android:textSize="16sp" />
 
@@ -72,6 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="#E8F5E9"
+        android:elevation="8dp"
+        android:fontFamily="@font/poppins_regular"
         android:gravity="center"
         android:padding="20dp"
         android:text="Select an image to analyze"

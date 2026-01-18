@@ -7,7 +7,8 @@
     android:padding="16dp">
 
     <!-- Title -->
-    <TextView
+    android:fontFamily="@font/poppins_bold"
+                <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -25,7 +26,8 @@
         android:layout_marginBottom="16dp"
         android:background="#E8F5E9"
         android:contentDescription="Insect Image"
-        android:scaleType="centerInside" />
+        android:scaleType="centerInside"
+        android:elevation="8dp" />
 
     <!-- Buttons -->
     <LinearLayout
@@ -34,34 +36,40 @@
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
-        <Button
+        android:fontFamily="@font/poppins_semibold"
+            <Button
             android:id="@+id/cameraBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:backgroundTint="#6BAA6E"
+            android:elevation="8dp"
             android:text="📷 Camera"
             android:textSize="16sp" />
 
-        <Button
+        android:fontFamily="@font/poppins_semibold"
+            <Button
             android:id="@+id/galleryBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:backgroundTint="#6BAA6E"
+            android:elevation="8dp"
             android:text="🖼️ Gallery"
             android:textSize="16sp" />
     </LinearLayout>
 
     <!-- Back Button -->
-    <Button
+    android:fontFamily="@font/poppins_semibold"
+            <Button
         android:id="@+id/backBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#CCCCCC"
+            android:elevation="8dp"
         android:text="← Back to Menu"
         android:textSize="14sp" />
 

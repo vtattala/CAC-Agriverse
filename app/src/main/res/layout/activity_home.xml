@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1A2B4A"
-            android:elevation="8dp"
+            android:elevation="12dp"
             android:orientation="vertical"
             android:padding="32dp">
 
@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins_bold"
                 android:text="🌾 Acre Intelligence"
                 android:textColor="#FFFFFF"
                 android:textSize="32sp"
@@ -36,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="4dp"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="Welcome back, Farmer!"
                 android:textColor="#E8F5E9"
                 android:textSize="20sp" />
@@ -44,6 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Your AI-powered farming assistant"
                 android:textColor="#C8E6C9"
                 android:textSize="14sp" />
@@ -65,7 +68,8 @@
                 android:text="AI Detection Tools"
                 android:textColor="#FAFAFA"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,7 +85,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                    app:cardElevation="12dp">
 
                     <LinearLayout
                         android:id="@+id/plantDiseaseBtn"
@@ -117,7 +121,8 @@
                             android:gravity="center"
                             android:text="38 diseases"
                             android:textColor="#C8E6C9"
-                            android:textSize="12sp" />
+                            android:textSize
+                            android:fontFamily="@font/poppins_regular"="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -128,7 +133,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                    app:cardElevation="12dp">
 
                     <LinearLayout
                         android:id="@+id/insectDetectionBtn"
@@ -164,7 +169,8 @@
                             android:gravity="center"
                             android:text="+ Crop impact"
                             android:textColor="#F1F8E9"
-                            android:textSize="12sp" />
+                            android:textSize
+                            android:fontFamily="@font/poppins_regular"="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -178,7 +184,8 @@
                 android:text="Knowledge Base"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_bold" />
 
             <!-- Encyclopedia Card -->
             <androidx.cardview.widget.CardView
@@ -186,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/encyclopediaBtn"
@@ -220,14 +227,16 @@
                             android:text="Plant Encyclopedia"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Search 400,000+ species worldwide"
                             android:textColor="#C8E6C9"
-                            android:textSize="14sp" />
+                            android:textSize
+                            android:fontFamily="@font/poppins_regular"="14sp" />
                     </LinearLayout>
 
                     <TextView
@@ -247,7 +256,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/regionalGuideBtn"
@@ -281,14 +290,16 @@
                             android:text="Regional Guide"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Climate zones and ideal crops by location"
                             android:textColor="#DCEDC8"
-                            android:textSize="14sp" />
+                            android:textSize
+                            android:fontFamily="@font/poppins_regular"="14sp" />
                     </LinearLayout>
 
                     <TextView
@@ -308,7 +319,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/plantInfoBtn"
@@ -342,14 +353,16 @@
                             android:text="Plant Information"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Growing guides for 12 major crops"
                             android:textColor="#F1F8E9"
-                            android:textSize="14sp" />
+                            android:textSize
+                            android:fontFamily="@font/poppins_regular"="14sp" />
                     </LinearLayout>
 
                     <TextView
@@ -372,7 +385,8 @@
                 android:text="Farm Tools"
                 android:textColor="#FBFBFB"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_bold" />
 
             <!-- Chatbot -->
             <androidx.cardview.widget.CardView
@@ -380,7 +394,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
+                app:cardElevation="12dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -410,14 +424,16 @@
                             android:text="AI Chatbot"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Get instant answers for your farming questions"
                             android:textColor="#BBDEFB"
-                            android:textSize="13sp" />
+                            android:textSize
+                            android:fontFamily="@font/poppins_regular"="13sp" />
                     </LinearLayout>
 
                     <Button
@@ -438,7 +454,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/notepadBtn"
@@ -472,14 +488,16 @@
                             android:text="Farmer's Notepad"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Keep track of your observations"
                             android:textColor="#FFF3E0"
-                            android:textSize="14sp" />
+                            android:textSize
+                            android:fontFamily="@font/poppins_regular"="14sp" />
                     </LinearLayout>
 
                     <TextView
@@ -500,7 +518,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
+                app:cardElevation="12dp">
 
                 <LinearLayout
                     android:id="@+id/satelliteBtn"
@@ -534,7 +552,8 @@
                             android:text="Agricultural Data"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -561,7 +580,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
+                app:cardElevation="12dp">
 
                 <LinearLayout
                     android:id="@+id/spaceWeatherBtn"
@@ -595,7 +614,8 @@
                             android:text="Space Weather"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold" />
 
                         <TextView
                             android:layout_width="wrap_content"

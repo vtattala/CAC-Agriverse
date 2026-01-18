@@ -7,7 +7,8 @@
     android:padding="16dp">
 
     <!-- Title -->
-    <TextView
+    android:fontFamily="@font/poppins_bold"
+                <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -24,7 +25,8 @@
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
-        <EditText
+        android:fontFamily="@font/poppins_regular"
+            <EditText
             android:id="@+id/searchInput"
             android:layout_width="0dp"
             android:layout_height="56dp"
@@ -35,21 +37,25 @@
             android:inputType="textCapWords"
             android:padding="12dp" />
 
-        <Button
+        android:fontFamily="@font/poppins_semibold"
+            <Button
             android:id="@+id/searchBtn"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:backgroundTint="#4A8A4E"
+            android:elevation="8dp"
             android:text="Search" />
     </LinearLayout>
 
     <!-- Back Button -->
-    <Button
+    android:fontFamily="@font/poppins_semibold"
+            <Button
         android:id="@+id/backBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#CCCCCC"
+            android:elevation="8dp"
         android:text="← Back to Menu"
         android:textSize="14sp" />
 

@@ -12,7 +12,8 @@
         android:padding="20dp">
 
         <!-- Header -->
-        <TextView
+        android:fontFamily="@font/poppins_bold"
+                <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -36,7 +37,7 @@
             android:layout_marginBottom="16dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            app:cardElevation="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,6 +45,7 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+                android:fontFamily="@font/poppins_bold"
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,7 +64,8 @@
                     android:textColor="#666666"
                     android:textSize="12sp" />
 
-                <EditText
+                android:fontFamily="@font/poppins_regular"
+            <EditText
                     android:id="@+id/latInput"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -83,7 +86,8 @@
                     android:textColor="#666666"
                     android:textSize="12sp" />
 
-                <EditText
+                android:fontFamily="@font/poppins_regular"
+            <EditText
                     android:id="@+id/lonInput"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -102,24 +106,28 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <Button
+                    android:fontFamily="@font/poppins_semibold"
+            <Button
                         android:id="@+id/useCurrentLocationBtn"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/green_accent"
+            android:elevation="8dp"
                         android:text="Use Current"
                         android:textColor="#FFFFFF"
                         android:textSize="14sp" />
 
-                    <Button
+                    android:fontFamily="@font/poppins_semibold"
+            <Button
                         android:id="@+id/fetchDataBtn"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginStart="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/green_accent"
+            android:elevation="8dp"
                         android:text="Fetch Data"
                         android:textColor="#FFFFFF"
                         android:textSize="14sp" />
@@ -128,7 +136,8 @@
         </androidx.cardview.widget.CardView>
 
         <!-- Current Region Display -->
-        <TextView
+        android:fontFamily="@font/poppins_bold"
+                <TextView
             android:id="@+id/regionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -161,6 +170,7 @@
                     android:textColor="#666666"
                     android:textSize="14sp" />
 
+                android:fontFamily="@font/poppins_bold"
                 <TextView
                     android:id="@+id/vegetationHealthText"
                     android:layout_width="wrap_content"
@@ -203,6 +213,7 @@
                     android:textColor="#666666"
                     android:textSize="14sp" />
 
+                android:fontFamily="@font/poppins_bold"
                 <TextView
                     android:id="@+id/moistureText"
                     android:layout_width="wrap_content"
@@ -245,6 +256,7 @@
                     android:textColor="#666666"
                     android:textSize="14sp" />
 
+                android:fontFamily="@font/poppins_bold"
                 <TextView
                     android:id="@+id/evapText"
                     android:layout_width="wrap_content"

@@ -24,7 +24,8 @@
             android:contentDescription="Back" />
 
         <!-- Title -->
-        <TextView
+        android:fontFamily="@font/poppins_bold"
+                <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter Your Phone Number"
@@ -65,7 +66,8 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Continue Button -->
-        <Button
+        android:fontFamily="@font/poppins_semibold"
+            <Button
             android:id="@+id/continueBtn"
             android:layout_width="match_parent"
             android:layout_height="60dp"

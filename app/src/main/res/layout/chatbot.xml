@@ -38,7 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <EditText
+        android:fontFamily="@font/poppins_regular"
+            <EditText
             android:id="@+id/messageInput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -48,7 +49,8 @@
             android:maxLines="4"
             android:padding="12dp" />
 
-        <Button
+        android:fontFamily="@font/poppins_semibold"
+            <Button
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
