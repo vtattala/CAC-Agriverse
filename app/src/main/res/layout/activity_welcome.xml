@@ -30,8 +30,8 @@
                 android:padding="20dp">
 
                 <ImageView
-                    android:layout_width="151dp"
-                    android:layout_height="150dp"
+                    android:layout_width="196dp"
+                    android:layout_height="197dp"
                     android:contentDescription="Acre Intelligence Logo"
                     android:src="@drawable/newlogo" />
 
@@ -53,12 +53,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="In every pixel a prophecy, in every scan a shield"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
             android:layout_marginBottom="60dp"
-            android:paddingHorizontal="40dp" />
+            android:gravity="center"
+            android:paddingHorizontal="40dp"
+            android:text="Knowledge in your hands \n Growth in your fields."
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
 
         <!-- Sign In with Google Button -->
         <androidx.appcompat.widget.AppCompatButton
@@ -95,10 +95,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:text="🌱 Start your farming journey"
-            android:textSize="14sp"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="40dp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

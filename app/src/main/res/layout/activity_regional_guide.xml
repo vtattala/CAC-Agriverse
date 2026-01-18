@@ -2,57 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue_primary_light"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#E8F5E9">
+    android:padding="16dp">
 
     <!-- Title -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="🗺️ Regional Agriculture Guide"
-        android:textSize="26sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
+        android:text="🗺️ Regional Agriculture Guide"
         android:textColor="#2E7D32"
-        android:layout_marginBottom="8dp" />
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <!-- Subtitle -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Discover ideal crops for any location"
-        android:textSize="14sp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:text="Discover ideal crops for any location"
         android:textColor="#4A8A4E"
-        android:layout_marginBottom="16dp" />
+        android:textSize="14sp" />
 
     <!-- Search Bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/locationInput"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_weight="1"
-            android:hint="Enter city or region..."
-            android:padding="12dp"
-            android:background="@android:color/white"
             android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:hint="Enter city or region..."
             android:inputType="textCapWords"
+            android:padding="12dp"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/searchBtn"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
+            android:backgroundTint="#4A8A4E"
             android:text="Search"
-            android:textSize="16sp"
-            android:backgroundTint="#4A8A4E" />
+            android:textSize="16sp" />
     </LinearLayout>
 
     <!-- Back Button -->
@@ -60,10 +60,10 @@
         android:id="@+id/backBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="← Back to Menu"
-        android:textSize="14sp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#CCCCCC"
-        android:layout_marginBottom="16dp" />
+        android:text="← Back to Menu"
+        android:textSize="14sp" />
 
     <!-- Progress Bar -->
     <ProgressBar
@@ -71,17 +71,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:scaleType="centerCrop"
-        android:background="#CCCCCC"
         android:layout_marginBottom="16dp"
-        android:contentDescription="World Map" />
+        android:background="#CCCCCC"
+        android:contentDescription="World Map"
+        android:scaleType="centerCrop" />
 
     <!-- Results ScrollView -->
     <ScrollView
@@ -95,10 +95,10 @@
             android:id="@+id/resultText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="#333333"
             android:lineSpacingExtra="4dp"
-            android:text="🌍 Welcome to Regional Agriculture Guide!\n\nSearch any city or region worldwide to discover:\n\n✅ Climate zone classification\n✅ Ideal vegetables for the region\n✅ Best grains to grow\n✅ Recommended fruits\n✅ Watering frequency guide\n✅ Current weather conditions\n✅ Growing season info\n\nTry: San Diego, Tokyo, Paris, Nairobi, Sydney" />
+            android:text="🌍 Welcome to Regional Agriculture Guide!\n\nSearch any city or region worldwide to discover:\n\n✅ Climate zone classification\n✅ Ideal vegetables for the region\n✅ Best grains to grow\n✅ Recommended fruits\n✅ Watering frequency guide\n✅ Current weather conditions\n✅ Growing season info\n\nTry: San Diego, Tokyo, Paris, Nairobi, Sydney"
+            android:textColor="#333333"
+            android:textSize="15sp" />
     </ScrollView>
 
 </LinearLayout>

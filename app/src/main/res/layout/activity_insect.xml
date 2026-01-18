@@ -2,57 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue_primary_light"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FAFAFA">
+    android:padding="16dp">
 
     <!-- Title -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="🐛 Insect Identification"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:text="🐛 Insect Identification"
         android:textColor="#6BAA6E"
-        android:layout_marginBottom="16dp" />
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <!-- Image Display -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:scaleType="centerInside"
+        android:layout_marginBottom="16dp"
         android:background="#E8F5E9"
         android:contentDescription="Insect Image"
-        android:layout_marginBottom="16dp" />
+        android:scaleType="centerInside" />
 
     <!-- Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/cameraBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="📷 Camera"
             android:layout_marginEnd="8dp"
-            android:textSize="16sp"
-            android:backgroundTint="#6BAA6E" />
+            android:layout_weight="1"
+            android:backgroundTint="#6BAA6E"
+            android:text="📷 Camera"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/galleryBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="🖼️ Gallery"
             android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            android:backgroundTint="#6BAA6E" />
+            android:layout_weight="1"
+            android:backgroundTint="#6BAA6E"
+            android:text="🖼️ Gallery"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <!-- Back Button -->
@@ -60,10 +60,10 @@
         android:id="@+id/backBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="← Back to Menu"
-        android:textSize="14sp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#CCCCCC"
-        android:layout_marginBottom="16dp" />
+        android:text="← Back to Menu"
+        android:textSize="14sp" />
 
     <!-- Progress Bar -->
     <ProgressBar
@@ -83,10 +83,10 @@
             android:id="@+id/resultText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:textSize="16sp"
-            android:textColor="#1A2B4A"
             android:background="#E8F5E9"
-            android:text="Select an image to analyze" />
+            android:padding="20dp"
+            android:text="Select an image to analyze"
+            android:textColor="#1A2B4A"
+            android:textSize="16sp" />
     </ScrollView>
 </LinearLayout>

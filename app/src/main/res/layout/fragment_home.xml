@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F8E9"
+    android:background="@color/dark_blue_primary_light"
     android:fillViewport="true">
 
     <LinearLayout
@@ -15,48 +15,48 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="#1A2B4A"
-            android:padding="32dp"
-            android:elevation="8dp">
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:padding="32dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🌾 Acre Intelligence"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
                 android:layout_gravity="center"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp"
+                android:text="🌾 Acre Intelligence"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/welcomeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
                 android:text="Welcome back, Farmer!"
-                android:textSize="20sp"
                 android:textColor="#E8F5E9"
-                android:layout_gravity="center"
-                android:layout_marginBottom="4dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
                 android:text="Your AI-powered farming assistant"
-                android:textSize="14sp"
                 android:textColor="#C8E6C9"
-                android:layout_gravity="center"
-                android:layout_marginBottom="8dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="← Swipe right for Space Weather →"
-                android:textSize="13sp"
-                android:textStyle="italic"
                 android:textColor="#E8F5E9"
-                android:layout_gravity="center" />
+                android:textSize="13sp"
+                android:textStyle="italic" />
         </LinearLayout>
 
         <!-- Main Content -->
@@ -70,26 +70,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AI Detection Tools"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="#1A2B4A"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginTop="8dp" />
+                android:text="AI Detection Tools"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
                 android:weightSum="2">
 
                 <!-- Plant Disease Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
                     android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
@@ -97,37 +97,37 @@
                         android:id="@+id/plantDiseaseBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:background="#5B9A5F"
-                        android:padding="20dp"
-                        android:gravity="center"
+                        android:background="@color/green_accent"
                         android:clickable="true"
-                        android:focusable="true">
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
                             android:text="🌱"
-                            android:textSize="64sp"
-                            android:layout_marginBottom="12dp" />
+                            android:textSize="64sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Disease\nDetection"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="#FFFFFF"
+                            android:layout_marginBottom="4dp"
                             android:gravity="center"
-                            android:layout_marginBottom="4dp" />
+                            android:text="Disease\nDetection"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="38 diseases"
-                            android:textSize="12sp"
                             android:textColor="#C8E6C9"
-                            android:gravity="center" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -135,8 +135,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
                     android:layout_marginStart="8dp"
+                    android:layout_weight="1"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
@@ -144,37 +144,37 @@
                         android:id="@+id/insectDetectionBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:background="#6BAA6E"
-                        android:padding="20dp"
-                        android:gravity="center"
+                        android:background="@color/green_accent"
                         android:clickable="true"
-                        android:focusable="true">
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
                             android:text="🐛"
-                            android:textSize="64sp"
-                            android:layout_marginBottom="12dp" />
+                            android:textSize="64sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Insect\nID"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="#FFFFFF"
+                            android:layout_marginBottom="4dp"
                             android:gravity="center"
-                            android:layout_marginBottom="4dp" />
+                            android:text="Insect\nID"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="+ Crop impact"
-                            android:textSize="12sp"
                             android:textColor="#F1F8E9"
-                            android:gravity="center" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -183,12 +183,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Knowledge Base"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="#1A2B4A"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginTop="8dp" />
+                android:text="Knowledge Base"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <!-- Encyclopedia Card -->
             <androidx.cardview.widget.CardView
@@ -202,52 +202,52 @@
                     android:id="@+id/encyclopediaBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
                     android:background="#1A2B4A"
                     android:clickable="true"
-                    android:focusable="true">
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🌍"
-                        android:textSize="48sp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginEnd="20dp"
-                        android:layout_gravity="center_vertical" />
+                        android:text="🌍"
+                        android:textSize="48sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
                             android:text="Plant Encyclopedia"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
                             android:textColor="#FFFFFF"
-                            android:layout_marginBottom="4dp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Search 400,000+ species worldwide"
-                            android:textSize="14sp"
-                            android:textColor="#C8E6C9" />
+                            android:textColor="#C8E6C9"
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:text="→"
-                        android:textSize="32sp"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -263,52 +263,52 @@
                     android:id="@+id/regionalGuideBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:background="#4A8A4E"
+                    android:background="@color/dark_blue_primary"
                     android:clickable="true"
-                    android:focusable="true">
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🗺️"
-                        android:textSize="48sp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginEnd="20dp"
-                        android:layout_gravity="center_vertical" />
+                        android:text="🗺️"
+                        android:textSize="48sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
                             android:text="Regional Guide"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
                             android:textColor="#FFFFFF"
-                            android:layout_marginBottom="4dp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Climate zones and ideal crops by location"
-                            android:textSize="14sp"
-                            android:textColor="#DCEDC8" />
+                            android:textColor="#DCEDC8"
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:text="→"
-                        android:textSize="32sp"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -324,52 +324,52 @@
                     android:id="@+id/plantInfoBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:background="#5B9A5F"
+                    android:background="@color/dark_blue_primary"
                     android:clickable="true"
-                    android:focusable="true">
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🌾"
-                        android:textSize="48sp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginEnd="20dp"
-                        android:layout_gravity="center_vertical" />
+                        android:text="🌾"
+                        android:textSize="48sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
                             android:text="Plant Information"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
                             android:textColor="#FFFFFF"
-                            android:layout_marginBottom="4dp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Growing guides for 12 major crops"
-                            android:textSize="14sp"
-                            android:textColor="#F1F8E9" />
+                            android:textColor="#F1F8E9"
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:text="→"
-                        android:textSize="32sp"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -377,12 +377,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Farm Tools"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="#1A2B4A"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginTop="8dp" />
+                android:text="Farm Tools"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <!-- Chatbot -->
             <androidx.cardview.widget.CardView
@@ -395,50 +395,50 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#2196F3"
                     android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:background="#2196F3">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🤖"
-                        android:textSize="40sp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginEnd="16dp"
-                        android:layout_gravity="center_vertical" />
+                        android:text="🤖"
+                        android:textSize="40sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="AI Chatbot"
+                            android:textColor="#FFFFFF"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="#FFFFFF" />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Get instant answers for your farming questions"
-                            android:textSize="13sp"
-                            android:textColor="#BBDEFB" />
+                            android:textColor="#BBDEFB"
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <Button
                         android:id="@+id/chatbotBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="48dp"
-                        android:text="Open"
-                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
                         android:backgroundTint="#1976D2"
+                        android:text="Open"
                         android:textColor="#FFFFFF"
-                        android:layout_gravity="center_vertical" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -454,52 +454,52 @@
                     android:id="@+id/notepadBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
                     android:background="#FF6F00"
                     android:clickable="true"
-                    android:focusable="true">
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📝"
-                        android:textSize="48sp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginEnd="20dp"
-                        android:layout_gravity="center_vertical" />
+                        android:text="📝"
+                        android:textSize="48sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
                             android:text="Farmer's Notepad"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
                             android:textColor="#FFFFFF"
-                            android:layout_marginBottom="4dp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Keep track of your observations"
-                            android:textSize="14sp"
-                            android:textColor="#FFF3E0" />
+                            android:textColor="#FFF3E0"
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:text="→"
-                        android:textSize="32sp"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -515,52 +515,52 @@
                     android:id="@+id/satelliteBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
                     android:background="#3F51B5"
                     android:clickable="true"
-                    android:focusable="true">
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🌾"
-                        android:textSize="48sp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginEnd="20dp"
-                        android:layout_gravity="center_vertical" />
+                        android:text="🌾"
+                        android:textSize="48sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
                             android:text="Agricultural Data"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
                             android:textColor="#FFFFFF"
-                            android:layout_marginBottom="4dp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Vegetation health, soil moisture &amp; weather"
-                            android:textSize="14sp"
-                            android:textColor="#C5CAE9" />
+                            android:textColor="#C5CAE9"
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:text="→"
-                        android:textSize="32sp"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
