@@ -7,8 +7,7 @@
     android:padding="16dp">
 
     <!-- Title -->
-    android:fontFamily="@font/poppins_bold"
-                <TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -35,8 +34,7 @@
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
-        android:fontFamily="@font/poppins_regular"
-            <EditText
+        <EditText
             android:id="@+id/searchInput"
             android:layout_width="0dp"
             android:layout_height="56dp"
@@ -48,26 +46,22 @@
             android:padding="12dp"
             android:textSize="16sp" />
 
-        android:fontFamily="@font/poppins_semibold"
-            <Button
+        <Button
             android:id="@+id/searchBtn"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:backgroundTint="#5B9A5F"
-            android:elevation="8dp"
             android:text="Search"
             android:textSize="16sp" />
     </LinearLayout>
 
     <!-- Back Button -->
-    android:fontFamily="@font/poppins_semibold"
-            <Button
+    <Button
         android:id="@+id/backBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#498BC34A"
-            android:elevation="8dp"
         android:text="Back to Menu"
         android:textSize="14sp" />
 
@@ -88,8 +82,7 @@
         android:layout_marginBottom="16dp"
         android:background="#FFFFFF"
         android:contentDescription="Plant Photo"
-        android:scaleType="centerCrop"
-        android:elevation="8dp" />
+        android:scaleType="centerCrop" />
 
     <!-- Results ScrollView -->
     <ScrollView

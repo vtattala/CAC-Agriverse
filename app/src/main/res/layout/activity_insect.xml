@@ -7,11 +7,11 @@
     android:padding="16dp">
 
     <!-- Title -->
-    android:fontFamily="@font/poppins_bold"
-                <TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="🐛 Insect Identification"
         android:textColor="#6BAA6E"
@@ -26,8 +26,8 @@
         android:layout_marginBottom="16dp"
         android:background="#E8F5E9"
         android:contentDescription="Insect Image"
-        android:scaleType="centerInside"
-        android:elevation="8dp" />
+        android:elevation="8dp"
+        android:scaleType="centerInside" />
 
     <!-- Buttons -->
     <LinearLayout
@@ -36,8 +36,7 @@
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
-        android:fontFamily="@font/poppins_semibold"
-            <Button
+        <Button
             android:id="@+id/cameraBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
@@ -45,11 +44,11 @@
             android:layout_weight="1"
             android:backgroundTint="#6BAA6E"
             android:elevation="8dp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="📷 Camera"
             android:textSize="16sp" />
 
-        android:fontFamily="@font/poppins_semibold"
-            <Button
+        <Button
             android:id="@+id/galleryBtn"
             android:layout_width="0dp"
             android:layout_height="56dp"
@@ -57,19 +56,20 @@
             android:layout_weight="1"
             android:backgroundTint="#6BAA6E"
             android:elevation="8dp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="🖼️ Gallery"
             android:textSize="16sp" />
     </LinearLayout>
 
     <!-- Back Button -->
-    android:fontFamily="@font/poppins_semibold"
-            <Button
+    <Button
         android:id="@+id/backBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#CCCCCC"
-            android:elevation="8dp"
+        android:elevation="8dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="← Back to Menu"
         android:textSize="14sp" />
 
@@ -92,6 +92,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#E8F5E9"
+            android:elevation="8dp"
+            android:fontFamily="@font/poppins_regular"
             android:padding="20dp"
             android:text="Select an image to analyze"
             android:textColor="#1A2B4A"

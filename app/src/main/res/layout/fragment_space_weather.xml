@@ -20,8 +20,7 @@
             android:padding="32dp"
             android:elevation="8dp">
 
-            android:fontFamily="@font/poppins_bold"
-                <TextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="☀️ Space Weather"
@@ -40,7 +39,6 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp" />
 
-            android:fontFamily="@font/poppins_semibold"
             <Button
                 android:id="@+id/refreshBtn"
                 android:layout_width="wrap_content"
@@ -48,7 +46,6 @@
                 android:text="🔄 Refresh Data"
                 android:textSize="14sp"
                 android:backgroundTint="#3F51B5"
-            android:elevation="8dp"
                 android:textColor="#FFFFFF"
                 android:layout_gravity="center" />
         </LinearLayout>
@@ -66,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="12dp"
+                app:cardElevation="6dp"
                 app:cardBackgroundColor="#1E2442">
 
                 <LinearLayout
@@ -103,8 +100,7 @@
                                 android:textColor="#7B83A6"
                                 android:layout_marginBottom="8dp" />
 
-                            android:fontFamily="@font/poppins_bold"
-                <TextView
+                            <TextView
                                 android:id="@+id/kpIndexValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -114,8 +110,7 @@
                                 android:textColor="#FFFFFF"
                                 android:layout_marginBottom="8dp" />
 
-                            android:fontFamily="@font/poppins_bold"
-                <TextView
+                            <TextView
                                 android:id="@+id/kpStatus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -163,8 +158,7 @@
                         android:textColor="#B0B8D4"
                         android:layout_marginBottom="8dp" />
 
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/geomagneticStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -175,8 +169,7 @@
                         android:layout_marginBottom="12dp" />
 
                     <!-- NEW: Crop Impact -->
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/cropImpact"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -195,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="12dp"
+                app:cardElevation="6dp"
                 app:cardBackgroundColor="#1E2442">
 
                 <LinearLayout
@@ -212,8 +205,7 @@
                         android:textColor="#B0B8D4"
                         android:layout_marginBottom="16dp" />
 
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/solarWindValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -223,8 +215,7 @@
                         android:textColor="#FFFFFF"
                         android:layout_marginBottom="8dp" />
 
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/solarWindStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -235,8 +226,7 @@
                         android:layout_marginBottom="16dp" />
 
                     <!-- NEW: Satellite Impact -->
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/satelliteImpact"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -262,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="12dp"
+                app:cardElevation="6dp"
                 app:cardBackgroundColor="#1E2442">
 
                 <LinearLayout
@@ -279,8 +269,7 @@
                         android:textColor="#B0B8D4"
                         android:layout_marginBottom="16dp" />
 
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/f107Value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -290,8 +279,7 @@
                         android:textColor="#FFFFFF"
                         android:layout_marginBottom="8dp" />
 
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/f107Status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -317,7 +305,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="12dp"
+                app:cardElevation="6dp"
                 app:cardBackgroundColor="#2D1B4E">
 
                 <LinearLayout
@@ -334,8 +322,7 @@
                         android:textColor="#D1C4E9"
                         android:layout_marginBottom="12dp" />
 
-                    android:fontFamily="@font/poppins_bold"
-                <TextView
+                    <TextView
                         android:id="@+id/radiationStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
