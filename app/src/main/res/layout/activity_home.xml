@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#1A2B4A"
-            android:elevation="8dp"
+            android:elevation="12dp"
             android:orientation="vertical"
             android:padding="32dp">
 
@@ -81,7 +81,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                    app:cardElevation="12dp">
 
                     <LinearLayout
                         android:id="@+id/plantDiseaseBtn"
@@ -102,22 +102,15 @@
                             android:textSize="64sp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="141dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
                             android:gravity="center"
-                            android:text="Disease\nDetection"
+                            android:text="Disease Detection"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="38 diseases"
-                            android:textColor="#C8E6C9"
-                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -128,7 +121,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                    app:cardElevation="12dp">
 
                     <LinearLayout
                         android:id="@+id/insectDetectionBtn"
@@ -149,22 +142,15 @@
                             android:textSize="64sp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="136dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
                             android:gravity="center"
-                            android:text="Insect\nID"
+                            android:text="Insect ID"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="+ Crop impact"
-                            android:textColor="#F1F8E9"
-                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -186,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/encyclopediaBtn"
@@ -247,7 +233,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/regionalGuideBtn"
@@ -308,7 +294,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/plantInfoBtn"
@@ -380,7 +366,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
+                app:cardElevation="12dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -438,7 +424,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:id="@+id/notepadBtn"
@@ -500,7 +486,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
+                app:cardElevation="12dp">
 
                 <LinearLayout
                     android:id="@+id/satelliteBtn"
@@ -561,7 +547,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
+                app:cardElevation="12dp">
 
                 <LinearLayout
                     android:id="@+id/spaceWeatherBtn"
