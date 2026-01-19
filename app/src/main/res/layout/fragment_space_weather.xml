@@ -168,7 +168,7 @@
                         android:textColor="#5B9A5F"
                         android:layout_marginBottom="12dp" />
 
-                    <!-- NEW: Crop Impact -->
+                    <!-- Crop Impact -->
                     <TextView
                         android:id="@+id/cropImpact"
                         android:layout_width="wrap_content"
@@ -225,7 +225,7 @@
                         android:textColor="#5B9A5F"
                         android:layout_marginBottom="16dp" />
 
-                    <!-- NEW: Satellite Impact -->
+                    <!-- Satellite Impact -->
                     <TextView
                         android:id="@+id/satelliteImpact"
                         android:layout_width="wrap_content"
@@ -338,6 +338,40 @@
                         android:text="Solar radiation influences photosynthesis rates, crop stress levels, and overall plant health."
                         android:textSize="13sp"
                         android:textColor="#B39DDB"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- AI Crop Summary Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#1E2442">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🤖 AI Crop Summary"
+                        android:textSize="16sp"
+                        android:textColor="#B0B8D4"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/aiSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Generating AI summary..."
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
                         android:lineSpacingExtra="4dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
